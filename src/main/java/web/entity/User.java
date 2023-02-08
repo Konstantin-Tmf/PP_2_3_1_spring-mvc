@@ -1,6 +1,5 @@
 package web.entity;
 
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -9,17 +8,17 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    @Column(name = "ID")
+    private Long id;
     @Column(name = "Name")
     private String name;
 
     @Column(name = "Surname")
     private String surname;
     @Column(name = "Age")
-    private int age;
+    private Integer age;
 
-    public User(int id, String name, String surname, int age) {
+    public User(Long id, String name, String surname, Integer age) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -27,14 +26,13 @@ public class User {
     }
 
     public User() {
-
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -54,21 +52,11 @@ public class User {
         this.surname = surname;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                '}';
     }
 }
